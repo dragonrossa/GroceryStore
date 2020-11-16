@@ -47,6 +47,7 @@
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web.DynamicData" />
@@ -179,6 +180,10 @@
     <Compile Include="Helpers\IBillModels.cs" />
     <Compile Include="Helpers\ITaxModels.cs" />
     <Compile Include="Helpers\listOfAll.cs" />
+    <Compile Include="MEF\Logger.cs" />
+    <Compile Include="MEF\Mef.cs" />
+    <Compile Include="MEF\Tax.cs" />
+    <Compile Include="MEF\WithPDV.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ArticleModels.cs" />

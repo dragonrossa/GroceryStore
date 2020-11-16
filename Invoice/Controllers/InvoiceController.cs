@@ -7,6 +7,8 @@ using Invoice.Models;
 using Microsoft.AspNet.Identity;
 using Invoice.Repository;
 using Invoice.Helpers;
+using Invoice.MEF;
+using static Invoice.MEF.Logger;
 
 namespace Invoice.Controllers
 {
@@ -53,6 +55,7 @@ namespace Invoice.Controllers
             return realTax;
         }
 
+       
 
         //First view - choose tax
 
@@ -128,6 +131,8 @@ namespace Invoice.Controllers
 
         public ActionResult NotFound()
         {
+         
+
 
             return View();
         }

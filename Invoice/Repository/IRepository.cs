@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using Invoice.Helpers;
 using Invoice.Models;
 using Microsoft.AspNet.Identity;
+using System.ComponentModel.Composition;
 
 namespace Invoice.Repository
 {
@@ -13,6 +14,8 @@ namespace Invoice.Repository
     public interface IRepository
     {
         //object Tax
+       // [Import]
+      //  int GetTax { get; set; }
         object Tax();
         //object Articles
         object Articles();

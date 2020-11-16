@@ -6,6 +6,8 @@ using System.Web.Mvc;
 using Invoice.Helpers;
 using Invoice.Models;
 using Microsoft.AspNet.Identity;
+using System.ComponentModel.Composition;
+using Invoice.MEF;
 
 namespace Invoice.Repository
 {
@@ -14,7 +16,13 @@ namespace Invoice.Repository
 
         private ApplicationDbContext db = new ApplicationDbContext();
 
+        MyService myService = Mef.Container.GetExportedValue<MyService>();
+
+      //  public int GetTax { get; set; }
+
+
         //ViewData for Tax
+       
         public object Tax()
         {
            return db.Tax.ToList().Select(u => new SelectListItem
