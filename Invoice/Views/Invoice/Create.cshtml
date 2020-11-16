@@ -1,0 +1,41 @@
+﻿@{
+    ViewBag.Title = "Create Invoice";
+}
+
+
+<div class="container-fluid">
+    <h1>Welcome to store,  @ViewBag.user </h1>
+</div>
+
+<div class="container-fluid">
+ <h4>Pick up articles and tax from list and submit your order.</h4>
+</div>
+
+@using (Html.BeginForm("Create", "Invoice", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="container-fluid">
+
+        <h5>What do you want to buy?</h5>
+
+        @Html.DropDownList("articles")
+    </div>
+
+    <div class="container-fluid">
+        <h5>How much do you want to buy?</h5>
+        @Html.TextBox("quantity")
+    </div>
+
+    <div class="container-fluid">
+        
+        <br />
+                <input type="submit" value="Yes" class="btn btn-primary" />
+
+        
+        </div>
+
+}
+
+
+

@@ -1,0 +1,82 @@
+﻿@model IEnumerable<Invoice.Helpers.listOfAll>
+
+@{
+    ViewBag.Title = "List all Invoices for current user";
+}
+
+<div class="container-fluid">
+    <h1>List of orders for @ViewBag.user </h1>
+</div>
+
+<div class="container-fluid">
+    <h2>Details</h2>
+</div>
+
+
+<div class="container-fluid">
+    <h3>User information:</h3>
+</div>
+
+<hr />
+
+<div class="container-fluid">
+    @foreach (var item in Model)
+    {
+        <p>
+            @Html.LabelFor(modelItem => item.AccountDate):
+            @Html.DisplayFor(modelItem => item.AccountDate)
+        </p>
+
+        <p>
+            @Html.LabelFor(modelItem => item.PaymentDate):
+            @Html.DisplayFor(modelItem => item.PaymentDate)
+        </p>
+
+        <p>
+            @Html.LabelFor(modelItem => item.InvoiceCreator):
+            @Html.DisplayFor(modelItem => item.InvoiceCreator)
+        </p>
+
+        <p>
+            @Html.LabelFor(modelItem => item.InvoiceRecipient):
+            @Html.DisplayFor(modelItem => item.InvoiceRecipient)
+        </p>
+
+        <p>
+            @Html.LabelFor(modelItem => item.Description):
+            @Html.DisplayFor(modelItem => item.Description)
+        </p>
+        <p>
+            @Html.LabelFor(modelItem => item.Quantity):
+            @Html.DisplayFor(modelItem => item.Quantity)
+        </p>
+        <p>
+            @Html.LabelFor(modelItem => item.PricePerUnitNoTax):
+            @Html.DisplayFor(modelItem => item.PricePerUnitNoTax)
+        </p>
+
+        <p>
+            @Html.LabelFor(modelItem => item.FullPriceAllNoTax):
+            @Html.DisplayFor(modelItem => item.FullPriceAllNoTax)
+        </p>
+
+        <p>
+            @Html.LabelFor(modelItem => item.Tax):
+            @Html.DisplayFor(modelItem => item.Tax)
+        </p>
+
+        <hr />
+
+    }
+
+    <hr />
+
+    <h4>Full price without tax</h4>
+
+    @ViewBag.sumOfAllWithoutTax
+
+    <h4>Full price with tax</h4>
+
+    @ViewBag.sumOfAllWithTax
+
+</div>

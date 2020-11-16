@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+
+<div class="container-fluid">
+    <h1>Welcome to store,  @ViewBag.user </h1>
+</div>
+
+@using (Html.BeginForm("Index", "Invoice", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    <div class="container-fluid">
+        <h5>What tax do you want to use?</h5>
+
+        @Html.DropDownList("tax")
+
+    </div>
+
+    <div class="container-fluid">
+
+        <br />
+        <input type="submit" value="Buy" class="btn btn-primary" />
+
+
+    </div>
+
+}

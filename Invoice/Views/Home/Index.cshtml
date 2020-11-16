@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Store</h1>
+    <p class="lead">Here you can buy new items and choose the tax for your orders.</p>
+    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Buy articles</h2>
+        <p>
+            Click here to buy groceries for your home.
+        </p>
+        <p>
+        @Html.ActionLink("Buy", "Create","Invoice")
+        @*<a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>*@
+    </div>
+    <div class="col-md-4">
+        <h2>List your orders</h2>
+        <p>Click here to list all your orders</p>
+        @Html.ActionLink("Orders", "List", "Invoice")
+        @*<p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>*@
+    </div>
+   
+</div>
