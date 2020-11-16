@@ -4,10 +4,11 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
+using Invoice.Helpers;
 
 namespace Invoice.Models
 {
-    public class BillModels
+    public class BillModels:IBillModels
     {
         [Key]
         [Display(Name = "Number")]

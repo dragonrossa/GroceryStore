@@ -105,4 +105,3 @@ C:\Users\r.duga2\source\repos\Invoice\Invoice\obj\Debug\Invoice.csproj.CoreCompi
 C:\Users\r.duga2\source\repos\Invoice\Invoice\obj\Debug\Invoice.csproj.CopyComplete
 C:\Users\r.duga2\source\repos\Invoice\Invoice\obj\Debug\Invoice.dll
 C:\Users\r.duga2\source\repos\Invoice\Invoice\obj\Debug\Invoice.pdb
-C:\Users\r.duga2\source\repos\Invoice\Invoice\obj\Debug\Invoice.csprojAssemblyReference.cache

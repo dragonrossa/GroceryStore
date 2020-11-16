@@ -21,6 +21,7 @@ namespace Invoice.Controllers
         BillModels newBill = new BillModels();
         //Object for new bill article
         BillArticleModels newBillArticle = new BillArticleModels();
+       
 
 
         //Potrebno je razviti sustav koji će omogućiti korisnicima stvaranje i pregledavanje faktura. 
@@ -124,7 +125,7 @@ namespace Invoice.Controllers
 
         //Get Bill for some user
 
-        public IEnumerable<listOfAll> Bill()
+        public IEnumerable<MyBill2> Bill()
         {
 
 
@@ -134,7 +135,7 @@ namespace Invoice.Controllers
                          join b in db.BillArticleModels on a.ID equals b.ArticleID
                          join c in db.Bills on b.BillID equals c.ID
                          join d in db.Tax on b.TaxID equals d.ID
-                         select new listOfAll
+                         select new MyBill2
                          {
 
                              AccountDate = c.AccountDate,

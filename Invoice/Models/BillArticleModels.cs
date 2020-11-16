@@ -4,10 +4,11 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
+using Invoice.Helpers;
 
 namespace Invoice.Models
 {
-    public class BillArticleModels
+    public class BillArticleModels:IBillArticleModels
     {
         [Key]
         public int ID { get; set; }
@@ -35,9 +36,6 @@ namespace Invoice.Models
         //Full price for all articles without TAX = Quantity * PriceNoTax
         [Column(TypeName = "money")]
         public decimal FullPriceAllNoTax { get; set; }
-        [Column(TypeName = "money")]
-        
-        //For list of bills
-        public IEnumerable<BillArticleModels> billArticles { get; set; }
+     
     }
 }

@@ -174,8 +174,11 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\IArticleModels.cs" />
+    <Compile Include="Helpers\IBillArticleModels.cs" />
+    <Compile Include="Helpers\IBillModels.cs" />
+    <Compile Include="Helpers\ITaxModels.cs" />
     <Compile Include="Helpers\listOfAll.cs" />
-    <Compile Include="Helpers\UserBill.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ArticleModels.cs" />
