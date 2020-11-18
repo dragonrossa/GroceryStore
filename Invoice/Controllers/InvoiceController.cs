@@ -8,7 +8,8 @@ using Microsoft.AspNet.Identity;
 using Invoice.Repository;
 using Invoice.Helpers;
 using Invoice.MEF;
-using static Invoice.MEF.Logger;
+using System.ComponentModel.Composition;
+using System.ComponentModel.Composition.Hosting;
 
 namespace Invoice.Controllers
 {
@@ -22,6 +23,15 @@ namespace Invoice.Controllers
         BillRepository bill = new BillRepository();
 
         //Username of user - example rodjuga@gmail.com
+
+        //Declare container for MEF
+        private CompositionContainer _container;
+
+        //Import and declare taxSum object
+        [Import(typeof(ITax))]
+        private ITax taxSum;
+
+
         public string ApplicationUser()
         {
             string user = User.Identity.GetUserName();
@@ -125,7 +135,30 @@ namespace Invoice.Controllers
             ViewBag.sumOfAllWithoutTax = bill.ViewBagsumOfAllWithoutTax(ApplicationUserID());
             //Sum of all articles on bill with Tax
             ViewBag.sumOfAllWithTax = bill.ViewBagsumOfAllWithTax(GetDecimalTax(), ApplicationUserID());
+            //Sum of all articles on bill with Tax
+        
+              var catalog = new AggregateCatalog();
+            // Adds all the parts found in the same assembly as the Program class.
+            catalog.Catalogs.Add(new AssemblyCatalog(typeof(ITax).Assembly));
 
+            // Create the CompositionContainer with the parts in the catalog.
+            _container = new CompositionContainer(catalog);
+
+            // Fill the imports of this object.
+            try
+            {
+                this._container.ComposeParts(this);
+            }
+            catch (CompositionException compositionException)
+            {
+                Console.WriteLine(compositionException.ToString());
+            }
+
+            //Import with MEF
+            ViewBag.taxSum = taxSum.sumAllPDV(GetDecimalTax(), ApplicationUserID());
+
+            //////////////////////////
+            
             return View(bill.Bill());
         }
 

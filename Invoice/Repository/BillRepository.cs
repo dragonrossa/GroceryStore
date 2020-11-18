@@ -16,11 +16,7 @@ namespace Invoice.Repository
 
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        MyService myService = Mef.Container.GetExportedValue<MyService>();
-
-      //  public int GetTax { get; set; }
-
-
+   
         //ViewData for Tax
        
         public object Tax()
@@ -164,8 +160,7 @@ namespace Invoice.Repository
         //Get list of all 
         public IEnumerable<BillArticleModels> GetList(string id)
         {
-            //username comes from Identity
-           // var userFromBill = (from b in db.BillArticleModels select b.UserID).FirstOrDefault();
+
             
             //Get list if userID is id
             return db.BillArticleModels.Where(u => u.UserID == id).Select(u => u).ToList();

@@ -6,25 +6,19 @@ using System.Web;
 
 namespace Invoice.MEF
 {
-    public class WithPDV
+    //Calling from Tax class - containst function for sum all with PDV
+    public static class WithPDV
     {
-        public ApplicationDbContext db = new ApplicationDbContext();
-        //Get sum of all with tax
-        //Get tax from Session
-        // decimal realTax = Convert.ToDecimal(Session["realTax"]);
 
-        //Sum of all items on bill with tax
+        public static ApplicationDbContext db = new ApplicationDbContext();
 
-        //Get sum of all with Tax
-
-        public WithPDV(decimal tax, string user)
+        public static decimal sumAllPDV(decimal tax, string user)
         {
-            decimal sumOfAllWithTax = (from t in db.Tax
-                                       join b in db.BillArticleModels
-                                       on t.ID equals b.TaxID
-                                       where b.UserID == user
-                                       select (((tax * b.PricePerUnitNoTax) + b.PricePerUnitNoTax) * b.Quantity)).Sum();
-
+            return (from t in db.Tax
+                 join b in db.BillArticleModels
+                 on t.ID equals b.TaxID
+                 where b.UserID == user
+                 select (((tax * b.PricePerUnitNoTax) + b.PricePerUnitNoTax) * b.Quantity)).Sum();
         }
 
     }

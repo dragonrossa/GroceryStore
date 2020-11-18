@@ -1,3 +1,4 @@
+C:\Users\r.duga2\source\repos\Invoice\Invoice\obj\Debug\Invoice.csproj.CoreCompileInputs.cache
 C:\Users\r.duga2\source\repos\Invoice\Invoice\bin\Invoice.dll.config
 C:\Users\r.duga2\source\repos\Invoice\Invoice\bin\Invoice.dll
 C:\Users\r.duga2\source\repos\Invoice\Invoice\bin\Invoice.pdb
@@ -101,8 +102,6 @@ C:\Users\r.duga2\source\repos\Invoice\Invoice\bin\Microsoft.Owin.Security.Twitte
 C:\Users\r.duga2\source\repos\Invoice\Invoice\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Users\r.duga2\source\repos\Invoice\Invoice\bin\Microsoft.Owin.Security.OAuth.xml
 C:\Users\r.duga2\source\repos\Invoice\Invoice\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\r.duga2\source\repos\Invoice\Invoice\obj\Debug\Invoice.csproj.CoreCompileInputs.cache
 C:\Users\r.duga2\source\repos\Invoice\Invoice\obj\Debug\Invoice.csproj.CopyComplete
 C:\Users\r.duga2\source\repos\Invoice\Invoice\obj\Debug\Invoice.dll
 C:\Users\r.duga2\source\repos\Invoice\Invoice\obj\Debug\Invoice.pdb
-C:\Users\r.duga2\source\repos\Invoice\Invoice\obj\Debug\Invoice.csprojAssemblyReference.cache

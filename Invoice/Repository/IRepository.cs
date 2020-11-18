@@ -13,9 +13,7 @@ namespace Invoice.Repository
     //base repository with basic database operations
     public interface IRepository
     {
-        //object Tax
-       // [Import]
-      //  int GetTax { get; set; }
+      
         object Tax();
         //object Articles
         object Articles();
